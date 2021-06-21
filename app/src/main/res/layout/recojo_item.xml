@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true"
+    android:background="@color/white"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/buttonsblack"
+        >
+
+        <ImageView
+            android:id="@+id/idImagen"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/cajaicon"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/idNombre"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15:20-18:00-TEJIDOS ORGÁNICOS S.A.C. LIMA18"
+            android:textColor="@color/white"
+            android:layout_toEndOf="@+id/idImagen"
+            android:layout_toRightOf="@+id/idImagen"
+            android:textSize="19dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/carnasbold"/>
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+

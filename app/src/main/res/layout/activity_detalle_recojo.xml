@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".DetalleRecojo">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical">
+
+        <RelativeLayout
+            android:id="@+id/layoutscroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/imgv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/atrasbtnimg"
+        android:onClick="onClick"
+         />
+
+    <TextView
+        android:id="@+id/titulodetalle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imgv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/carnasbold"
+        android:text="Detalle del recojo"
+        android:textColor="@color/azulosc"
+        android:textSize="35dp" />
+
+    <TextView
+        android:id="@+id/CodigoRecojo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Codigo Recojo: "
+        android:layout_below="@+id/titulodetalle"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="19dp"
+        android:textColor="@color/azulosc"
+        android:fontFamily="@font/carnasbold"
+     />
+
+    <TextView
+        android:id="@+id/CodigoRecojo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="52"
+        android:layout_below="@+id/titulodetalle"
+        android:layout_toRightOf="@+id/CodigoRecojo1"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="19dp"
+        android:textColor="@color/azulosc"
+        android:fontFamily="@font/carnasthin"
+        />
+            <TextView
+                android:id="@+id/RazonSocial1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Razon Social: "
+                android:layout_below="@+id/CodigoRecojo"
+                android:layout_marginTop="15dp"
+
+                android:layout_marginLeft="10dp"
+                android:textSize="19dp"
+                android:textColor="@color/azulosc"
+                android:fontFamily="@font/carnasbold"
+                />
+    <TextView
+        android:id="@+id/RazonSocial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CORPORACIÓN REY S.A."
+        android:layout_below="@+id/CodigoRecojo"
+        android:layout_toRightOf="@+id/CodigoRecojo1"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="19dp"
+        android:textColor="@color/azulosc"
+        android:fontFamily="@font/carnasthin"
+        />
+    <TextView
+        android:id="@+id/Contacto1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contacto: "
+        android:layout_below="@+id/RazonSocial"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="19dp"
+
+        android:textColor="@color/azulosc"
+        android:fontFamily="@font/carnasbold"
+        />
+
+            <TextView
+                android:id="@+id/Contacto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mayra Gonzales"
+                android:layout_below="@+id/RazonSocial"
+                android:layout_toRightOf="@id/Contacto1"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="19dp"
+                android:textColor="@color/azulosc"
+                android:fontFamily="@font/carnasthin"
+                />
+    <TextView
+        android:id="@+id/Direccion1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dirección: "
+        android:layout_below="@+id/Contacto"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="19dp"
+        android:textColor="@color/azulosc"
+        android:fontFamily="@font/carnasbold"
+        />
+            <TextView
+                android:id="@+id/Direccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dirección: AV. OSCAR R. BENAVIDES NRO. 5991 Z.I. PARQUE INDUSTRIAL Y COMER"
+                android:layout_below="@+id/Contacto"
+                android:layout_toRightOf="@+id/Direccion1"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="19dp"
+                android:textColor="@color/azulosc"
+                android:fontFamily="@font/carnasthin"
+                />
+
+            <TextView
+                android:id="@+id/CodigoPostal1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Código Postal: "
+                android:layout_below="@+id/Direccion"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="19dp"
+                android:textColor="@color/azulosc"
+                android:fontFamily="@font/carnasbold"
+                />
+    <TextView
+        android:id="@+id/CodigoPostal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CALLAO01"
+        android:layout_below="@+id/Direccion"
+        android:layout_toRightOf="@+id/CodigoPostal1"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="19dp"
+        android:textColor="@color/azulosc"
+        android:fontFamily="@font/carnasthin"
+        />
+
+            <TextView
+                android:id="@+id/Descripcion1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Descripción: "
+                android:layout_below="@+id/CodigoPostal"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="19dp"
+                android:textColor="@color/azulosc"
+                android:fontFamily="@font/carnasbold"
+                />
+    <TextView
+        android:id="@+id/Descripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MUESTRAS"
+        android:layout_below="@+id/CodigoPostal"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/Descripcion1"
+        android:layout_marginLeft="10dp"
+        android:textSize="19dp"
+        android:textColor="@color/azulosc"
+        android:fontFamily="@font/carnasthin"
+        />
+            <TextView
+                android:id="@+id/Embalaje1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Embalaje: "
+                android:layout_below="@+id/Descripcion"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="19dp"
+                android:textColor="@color/azulosc"
+                android:fontFamily="@font/carnasbold"
+                />
+    <TextView
+        android:id="@+id/Embalaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OTHER/DEST GUATEMALA"
+        android:layout_below="@+id/Descripcion"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/Embalaje1"
+        android:textSize="19dp"
+        android:textColor="@color/azulosc"
+        android:fontFamily="@font/carnasthin"
+        />
+            <TextView
+                android:id="@+id/Peso1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Peso: "
+                android:layout_below="@+id/Embalaje"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="19dp"
+                android:textColor="@color/azulosc"
+                android:fontFamily="@font/carnasbold"
+                />
+    <TextView
+        android:id="@+id/Peso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/Peso1"
+        android:text="14.000 KGS"
+        android:layout_below="@+id/Embalaje"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="19dp"
+        android:textColor="@color/azulosc"
+        android:fontFamily="@font/carnasthin"
+        />
+            <TextView
+                android:id="@+id/Destino1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Destino: "
+                android:layout_below="@+id/Peso"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="19dp"
+                android:textColor="@color/azulosc"
+                android:fontFamily="@font/carnasbold"
+                />
+    <TextView
+        android:id="@+id/Destino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GUATEMALA"
+        android:layout_below="@+id/Peso"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/Destino1"
+        android:textSize="19dp"
+        android:textColor="@color/azulosc"
+        android:fontFamily="@font/carnasthin"
+        />
+            <TextView
+                android:id="@+id/Pago11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pago 1: "
+                android:layout_below="@+id/Destino"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="19dp"
+                android:textColor="@color/azulosc"
+                android:fontFamily="@font/carnasbold"
+                />
+    <TextView
+        android:id="@+id/Pago1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pago 1: B/C"
+        android:layout_below="@+id/Destino"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/Pago11"
+        android:textSize="19dp"
+        android:textColor="@color/azulosc"
+        android:fontFamily="@font/carnasthin"
+        />
+            <TextView
+                android:id="@+id/Pago21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pago 2: "
+                android:layout_below="@+id/Pago1"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="19dp"
+                android:textColor="@color/azulosc"
+                android:fontFamily="@font/carnasbold"
+                />
+    <TextView
+        android:id="@+id/Pago2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="258987322"
+        android:layout_below="@+id/Pago1"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/Pago21"
+        android:textSize="19dp"
+        android:textColor="@color/azulosc"
+        android:fontFamily="@font/carnasthin"
+        />
+            <TextView
+                android:id="@+id/Observacion1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Observación: "
+                android:layout_below="@+id/Pago2"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="19dp"
+                android:textColor="@color/azulosc"
+                android:fontFamily="@font/carnasbold"
+                />
+    <TextView
+        android:id="@+id/Observacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[9] [Cta.: 258987322][Piezas 1][Telef: 613-8000] 01 CAJA(18*39*78) AWB+FC"
+        android:layout_below="@+id/Pago2"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/Observacion1"
+        android:textSize="19dp"
+        android:textColor="@color/azulosc"
+        android:fontFamily="@font/carnasthin"
+        />
+
+            <RelativeLayout
+                android:id="@+id/Botonesc"
+                android:layout_width="match_parent"
+                android:layout_below="@id/Observacion"
+                android:layout_height="match_parent">
+
+
+
+            <Button
+                android:id="@+id/btnRecogido"
+                android:layout_width="85dp"
+                android:layout_height="40dp"
+
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/carnasbold"
+                android:background="@drawable/buttons"
+                android:onClick="onClick"
+                android:text="Recogido" />
+
+            <Button
+                android:id="@+id/btnPendiente"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_toEndOf="@+id/btnRecogido"
+                android:layout_toRightOf="@+id/btnRecogido"
+                android:background="@drawable/buttonsceleste"
+                android:fontFamily="@font/carnasbold"
+                android:onClick="onClick"
+                android:text="Pendiente" />
+
+            <Button
+                android:id="@+id/btnFuturo"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="16dp"
+                android:layout_toEndOf="@+id/btnPendiente"
+                android:fontFamily="@font/carnasbold"
+                android:layout_toRightOf="@id/btnPendiente"
+                android:background="@drawable/buttonspurple"
+                android:onClick="onClick"
+                android:text="Futuro" />
+
+            <Button
+                android:id="@+id/btnAnulado"
+                android:layout_width="85dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="16dp"
+                android:layout_toEndOf="@+id/btnFuturo"
+                android:layout_toRightOf="@id/btnFuturo"
+                android:fontFamily="@font/carnasbold"
+                android:background="@drawable/buttonsgray"
+                android:onClick="onClick"
+                android:text="Anulado" />
+        </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>

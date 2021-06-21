@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "394833368440",
+    "project_id": "wap-reborn",
+    "storage_bucket": "wap-reborn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394833368440:android:f311d56913da76f6a3e48d",
+        "android_client_info": {
+          "package_name": "com.JH.wapreborn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394833368440-it3hq6uuijuuofi56i8ue8ivk4t8n7r3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzBrF3u5bEAtLHh7lv2CqkffxtSMeErOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394833368440-it3hq6uuijuuofi56i8ue8ivk4t8n7r3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

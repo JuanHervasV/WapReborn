@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+    android:background="@color/white"
+    tools:context=".ListadoEmp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/imgv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:onClick="onClick"
+            android:background="@drawable/atrasbtnimg"
+            app:srcCompat="@drawable/atrasbtnimg"
+            />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recojos pendientes"
+        android:fontFamily="@font/carnasbold"
+        android:textSize="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="40dp"
+        android:textColor="@color/azulosc"
+
+        />
+
+        <Button
+            android:id="@+id/btnrefresh"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/refresh"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="35dp"
+            android:onClick="onClick"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtusuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BIENVENIDO"
+        android:fontFamily="@font/carnasthin"
+        android:textSize="18dp"
+        android:layout_gravity="center"
+        android:textColor="@color/azulosc"
+        android:layout_marginTop="21dp"
+        android:layout_marginLeft="2dp"
+
+        />
+
+    <TextView
+        android:id="@+id/txtpaquete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recojos pendientes: "
+        android:fontFamily="@font/carnasthin"
+        android:textSize="18dp"
+        android:layout_gravity="center"
+        android:textColor="@color/azulosc"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="2dp"
+
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewRecojos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="202dp"
+        tools:layout_editor_absoluteY="173dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="15dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="30dp"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/flechitaabajo"/>
+
+
+</LinearLayout>
