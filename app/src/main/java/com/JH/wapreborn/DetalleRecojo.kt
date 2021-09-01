@@ -7,9 +7,7 @@ import android.os.Handler
 import android.preference.PreferenceManager
 import android.view.MotionEvent
 import android.view.View
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.JH.wapreborn.Model.DetalleRecojo
 import com.JH.wapreborn.Model.RegistrarEstado
@@ -60,18 +58,40 @@ class DetalleRecojo : AppCompatActivity() {
 
     fun onClick(view: View) {
 
+
         when (view.getId()) {
             R.id.btnRecogido ->
                 funRecogido()
             R.id.btnPendiente ->
-                funPendiente()
-            R.id.btnFuturo ->
-                funFuturo()
+                botonesVisibles()
+            R.id.ADocIncompleta ->
+                funADocIncompleta()
+            R.id.AIncPago ->
+                funAIncPago()
+            R.id.ADirecIncorrecta ->
+                funADirecIncorrecta()
             R.id.btnAnulado ->
+                BotonesVisible2()
+            R.id.btnAn ->
                 funAnulado()
+            R.id.btnAnuSinEnvio ->
+                funbtnAnuSinEnvio()
             R.id.imgv ->
                 retroceder()
         }
+    }
+
+    fun botonesVisibles(){
+        val btnes2 = findViewById<View>(R.id.Botones2) as RelativeLayout
+        val btnes3 = findViewById<View>(R.id.Botones3) as RelativeLayout
+        btnes2.setVisibility(View.VISIBLE);
+        btnes3.setVisibility(View.GONE);
+    }
+    fun BotonesVisible2(){
+        val btnes2 = findViewById<View>(R.id.Botones2) as RelativeLayout
+        val btnes3 = findViewById<View>(R.id.Botones3) as RelativeLayout
+        btnes3.setVisibility(View.VISIBLE);
+        btnes2.setVisibility(View.GONE);
     }
 
     fun onTouch() {
@@ -93,17 +113,6 @@ class DetalleRecojo : AppCompatActivity() {
             }
             if (event.action == MotionEvent.ACTION_UP || event.action == MotionEvent.ACTION_CANCEL) {
                 v.setBackgroundResource(R.drawable.buttonsceleste)
-                //v.setBackgroundColor(Color.parseColor("@drawable/rounded_corners"));
-            }
-            false
-        })
-        val Futuro_b = findViewById<Button>(R.id.btnFuturo)
-        Futuro_b.setOnTouchListener(View.OnTouchListener { v, event ->
-            if (event.action == MotionEvent.ACTION_DOWN || event.action == MotionEvent.ACTION_MOVE) {
-                v.setBackgroundResource(R.drawable.buttonsblack)
-            }
-            if (event.action == MotionEvent.ACTION_UP || event.action == MotionEvent.ACTION_CANCEL) {
-                v.setBackgroundResource(R.drawable.buttonspurple)
                 //v.setBackgroundColor(Color.parseColor("@drawable/rounded_corners"));
             }
             false
@@ -367,14 +376,14 @@ class DetalleRecojo : AppCompatActivity() {
         })
     }
 
-    fun funPendiente(){
+    fun funADocIncompleta(){
         val sharedPref = getPreferences(MODE_PRIVATE)
         val preferences = PreferenceManager.getDefaultSharedPreferences(this@DetalleRecojo)
         val idrecoj = preferences.getString("CodigoRecojo", "CodigoRecojo")
         val idrecojo = idrecoj!!.toInt()
 
         val codusuario = preferences.getString("dniusuario", "nombreusuario")
-        val estadorecojo = "P"
+        val estadorecojo = "ADI"
 
         val dateFormat: DateFormat = SimpleDateFormat("dd/MM/yyyy")
         val date = Date()
@@ -409,7 +418,7 @@ class DetalleRecojo : AppCompatActivity() {
 
                 Toast.makeText(
                     applicationContext,
-                    "Paquete recojido exitosamente",
+                    "Paquete actualizado",
                     Toast.LENGTH_SHORT
                 ).show();
                 finish()
@@ -424,7 +433,7 @@ class DetalleRecojo : AppCompatActivity() {
                 val editor = preferences.edit()
 
                 val codusuario = preferences.getString("dniusuario", "nombreusuario")
-                val estadorecojo = "P"
+                val estadorecojo = "ADI"
                 val dateFormat: DateFormat = SimpleDateFormat("dd/MM/yyyy")
                 val date = Date()
                 val fechaRecojo = "" + dateFormat.format(date)
@@ -450,14 +459,14 @@ class DetalleRecojo : AppCompatActivity() {
         })
     }
 
-    fun funFuturo(){
+    fun funAIncPago(){
         val sharedPref = getPreferences(MODE_PRIVATE)
         val preferences = PreferenceManager.getDefaultSharedPreferences(this@DetalleRecojo)
         val idrecoj = preferences.getString("CodigoRecojo", "CodigoRecojo")
         val idrecojo = idrecoj!!.toInt()
 
         val codusuario = preferences.getString("dniusuario", "nombreusuario")
-        val estadorecojo = "F"
+        val estadorecojo = "AIP"
 
         val dateFormat: DateFormat = SimpleDateFormat("dd/MM/yyyy")
         val date = Date()
@@ -492,10 +501,11 @@ class DetalleRecojo : AppCompatActivity() {
 
                 Toast.makeText(
                     applicationContext,
-                    "Paquete recojido exitosamente",
+                    "Paquete actualizado",
                     Toast.LENGTH_SHORT
                 ).show();
                 finish()
+
             }
 
             override fun onFailure(call: Call<RegistrarEstado?>, t: Throwable) {
@@ -506,7 +516,90 @@ class DetalleRecojo : AppCompatActivity() {
                 val editor = preferences.edit()
 
                 val codusuario = preferences.getString("dniusuario", "nombreusuario")
-                val estadorecojo = "F"
+                val estadorecojo = "AIP"
+                val dateFormat: DateFormat = SimpleDateFormat("dd/MM/yyyy")
+                val date = Date()
+                val fechaRecojo = "" + dateFormat.format(date)
+                val horaInicial = preferences.getString("HoraInicio", "HoraInicio")
+                val horaFinal = preferences.getString("HoraFin", "HoraFin")
+
+                editor.putString("coderecojo" + coderecoj, "" + coderecoj);
+                editor.putString("codeusuar" + coderecoj, "" + codusuario)
+                editor.putString("estarec" + coderecoj, "" + estadorecojo)
+                editor.putString("fechaRec" + coderecoj, "" + fechaRecojo)
+                editor.putString("horaI" + coderecoj, "" + horaInicial)
+                editor.putString("horaF" + coderecoj, "" + horaFinal)
+                editor.commit()
+
+                val dialog = Dialog(this@DetalleRecojo)
+                dialog?.setContentView(R.layout.popup)
+                dialog.show()
+                val handler = Handler()
+                handler.postDelayed({ dialog.dismiss() }, 4000)
+                handler.postDelayed({finish()}, 4001)
+                return
+            }
+        })
+    }
+
+    fun funADirecIncorrecta(){
+        val sharedPref = getPreferences(MODE_PRIVATE)
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this@DetalleRecojo)
+        val idrecoj = preferences.getString("CodigoRecojo", "CodigoRecojo")
+        val idrecojo = idrecoj!!.toInt()
+
+        val codusuario = preferences.getString("dniusuario", "nombreusuario")
+        val estadorecojo = "ADIR"
+
+        val dateFormat: DateFormat = SimpleDateFormat("dd/MM/yyyy")
+        val date = Date()
+        val fechaRecojo = ""+dateFormat.format(date)
+        val horaInicial = preferences.getString("HoraInicio", "HoraInicio")
+        val horaFinal = preferences.getString("HoraFin", "HoraFin")
+
+        val registrarEstado = RegistrarEstado(
+            idrecojo,
+            "" + codusuario,
+            "" + estadorecojo,
+            "" + fechaRecojo,
+            "" + horaInicial,
+            "" + horaFinal
+        )
+        val callo: Call<RegistrarEstado> = jsonPlaceHolderApi!!.registrarEstado(registrarEstado)
+        callo.enqueue(object : Callback<RegistrarEstado?> {
+            override fun onResponse(
+                call: Call<RegistrarEstado?>,
+                response: Response<RegistrarEstado?>
+            ) {
+                if (!response.isSuccessful()) {
+                    //mJsonTxtView.setText("Codigo:" + response.code());
+                    Toast.makeText(
+                        applicationContext,
+                        "Error.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    return
+                }
+                val postsResponse: RegistrarEstado? = response.body()
+
+                Toast.makeText(
+                    applicationContext,
+                    "Paquete actualizado",
+                    Toast.LENGTH_SHORT
+                ).show();
+                finish()
+
+            }
+
+            override fun onFailure(call: Call<RegistrarEstado?>, t: Throwable) {
+                val b = intent.extras
+                val coderecoj = b?.getString("recojoReco", "recojoReco")
+                val sharedPref = getPreferences(MODE_PRIVATE)
+                val preferences = PreferenceManager.getDefaultSharedPreferences(this@DetalleRecojo)
+                val editor = preferences.edit()
+
+                val codusuario = preferences.getString("dniusuario", "nombreusuario")
+                val estadorecojo = "ADIR"
                 val dateFormat: DateFormat = SimpleDateFormat("dd/MM/yyyy")
                 val date = Date()
                 val fechaRecojo = "" + dateFormat.format(date)
@@ -574,7 +667,7 @@ class DetalleRecojo : AppCompatActivity() {
 
                 Toast.makeText(
                     applicationContext,
-                    "Paquete recojido exitosamente",
+                    "Paquete anulado",
                     Toast.LENGTH_SHORT
                 ).show();
                 finish()
@@ -589,6 +682,88 @@ class DetalleRecojo : AppCompatActivity() {
 
                 val codusuario = preferences.getString("dniusuario", "nombreusuario")
                 val estadorecojo = "A"
+                val dateFormat: DateFormat = SimpleDateFormat("dd/MM/yyyy")
+                val date = Date()
+                val fechaRecojo = "" + dateFormat.format(date)
+                val horaInicial = preferences.getString("HoraInicio", "HoraInicio")
+                val horaFinal = preferences.getString("HoraFin", "HoraFin")
+
+                editor.putString("coderecojo" + coderecoj, "" + coderecoj);
+                editor.putString("codeusuar" + coderecoj, "" + codusuario)
+                editor.putString("estarec" + coderecoj, "" + estadorecojo)
+                editor.putString("fechaRec" + coderecoj, "" + fechaRecojo)
+                editor.putString("horaI" + coderecoj, "" + horaInicial)
+                editor.putString("horaF" + coderecoj, "" + horaFinal)
+                editor.commit()
+
+                val dialog = Dialog(this@DetalleRecojo)
+                dialog?.setContentView(R.layout.popup)
+                dialog.show()
+                val handler = Handler()
+                handler.postDelayed({ dialog.dismiss() }, 4000)
+                handler.postDelayed({finish()}, 4001)
+                return
+            }
+        })
+    }
+
+    fun funbtnAnuSinEnvio(){
+        val sharedPref = getPreferences(MODE_PRIVATE)
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this@DetalleRecojo)
+        val idrecoj = preferences.getString("CodigoRecojo", "CodigoRecojo")
+        val idrecojo = idrecoj!!.toInt()
+
+        val codusuario = preferences.getString("dniusuario", "nombreusuario")
+        val estadorecojo = "AS"
+
+        val dateFormat: DateFormat = SimpleDateFormat("dd/MM/yyyy")
+        val date = Date()
+        val fechaRecojo = ""+dateFormat.format(date)
+        val horaInicial = preferences.getString("HoraInicio", "HoraInicio")
+        val horaFinal = preferences.getString("HoraFin", "HoraFin")
+
+        val registrarEstado = RegistrarEstado(
+            idrecojo,
+            "" + codusuario,
+            "" + estadorecojo,
+            "" + fechaRecojo,
+            "" + horaInicial,
+            "" + horaFinal
+        )
+        val callo: Call<RegistrarEstado> = jsonPlaceHolderApi!!.registrarEstado(registrarEstado)
+        callo.enqueue(object : Callback<RegistrarEstado?> {
+            override fun onResponse(
+                call: Call<RegistrarEstado?>,
+                response: Response<RegistrarEstado?>
+            ) {
+                if (!response.isSuccessful()) {
+                    //mJsonTxtView.setText("Codigo:" + response.code());
+                    Toast.makeText(
+                        applicationContext,
+                        "Error.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    return
+                }
+                val postsResponse: RegistrarEstado? = response.body()
+
+                Toast.makeText(
+                    applicationContext,
+                    "Paquete actualizado",
+                    Toast.LENGTH_SHORT
+                ).show();
+                finish()
+            }
+
+            override fun onFailure(call: Call<RegistrarEstado?>, t: Throwable) {
+                val b = intent.extras
+                val coderecoj = b?.getString("recojoReco", "recojoReco")
+                val sharedPref = getPreferences(MODE_PRIVATE)
+                val preferences = PreferenceManager.getDefaultSharedPreferences(this@DetalleRecojo)
+                val editor = preferences.edit()
+
+                val codusuario = preferences.getString("dniusuario", "nombreusuario")
+                val estadorecojo = "AS"
                 val dateFormat: DateFormat = SimpleDateFormat("dd/MM/yyyy")
                 val date = Date()
                 val fechaRecojo = "" + dateFormat.format(date)

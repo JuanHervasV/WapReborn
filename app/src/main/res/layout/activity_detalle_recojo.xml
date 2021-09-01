@@ -357,7 +357,6 @@
                 android:layout_height="match_parent">
 
 
-
             <Button
                 android:id="@+id/btnRecogido"
                 android:layout_width="85dp"
@@ -385,18 +384,6 @@
                 android:onClick="onClick"
                 android:text="Pendiente" />
 
-            <Button
-                android:id="@+id/btnFuturo"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="16dp"
-                android:layout_toEndOf="@+id/btnPendiente"
-                android:fontFamily="@font/carnasbold"
-                android:layout_toRightOf="@id/btnPendiente"
-                android:background="@drawable/buttonspurple"
-                android:onClick="onClick"
-                android:text="Futuro" />
 
             <Button
                 android:id="@+id/btnAnulado"
@@ -404,13 +391,97 @@
                 android:layout_height="40dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="16dp"
-                android:layout_toEndOf="@+id/btnFuturo"
-                android:layout_toRightOf="@id/btnFuturo"
+                android:layout_toEndOf="@+id/btnPendiente"
+                android:layout_toRightOf="@id/btnPendiente"
                 android:fontFamily="@font/carnasbold"
                 android:background="@drawable/buttonsgray"
                 android:onClick="onClick"
                 android:text="Anulado" />
         </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/Botones2"
+                android:layout_width="match_parent"
+                android:layout_below="@id/Botonesc"
+                android:visibility="gone"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/ADocIncompleta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/carnasbold"
+                    android:background="@drawable/buttons"
+                    android:onClick="onClick"
+                    android:text="Anulado Doc. Incompleta" />
+
+                <Button
+                    android:id="@+id/AIncPago"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toEndOf="@+id/ADocIncompleta"
+                    android:layout_toRightOf="@+id/ADocIncompleta"
+                    android:background="@drawable/buttonsceleste"
+                    android:fontFamily="@font/carnasbold"
+                    android:onClick="onClick"
+                    android:text="Anulado Inc. Pago" />
+
+
+                <Button
+                    android:id="@+id/ADirecIncorrecta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/carnasbold"
+                    android:layout_below="@id/ADocIncompleta"
+                    android:background="@drawable/buttonsgray"
+                    android:onClick="onClick"
+                    android:text="Anulado Direc. Incorrecta" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/Botones3"
+                android:layout_width="match_parent"
+                android:layout_below="@id/Botonesc"
+                android:visibility="gone"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnAn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/carnasbold"
+                    android:background="@drawable/buttons"
+                    android:onClick="onClick"
+                    android:text="Recojo Anulado" />
+
+                <Button
+                    android:id="@+id/btnAnuSinEnvio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toEndOf="@+id/btnAn"
+                    android:layout_toRightOf="@+id/btnAn"
+                    android:background="@drawable/buttonsceleste"
+                    android:fontFamily="@font/carnasbold"
+                    android:onClick="onClick"
+                    android:text="Anulado sin envío" />
+
+            </RelativeLayout>
+
         </RelativeLayout>
 
     </ScrollView>

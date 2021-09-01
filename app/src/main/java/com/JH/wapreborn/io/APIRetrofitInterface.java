@@ -18,7 +18,6 @@ import retrofit2.http.POST;
 
 public interface APIRetrofitInterface {
 
-
     @POST("ListarRecojos")
     Call<List<ListarRecojos>> listarRecojos(@Body ListarRecojos listarRecojos);
 
